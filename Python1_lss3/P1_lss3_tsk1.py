@@ -13,12 +13,15 @@ print(div_1())
 
 # -------------------------------
 
-a_1 = float(input('Введите делимое: \n'))
-a_2 = float(input('Введите делитель: \n'))
+a_1 = input('Введите делимое: \n')
+a_2 = input('Введите делитель: \n')
 def div_2(ar_1, ar_2):
     try:
-        # ar_1 / ar_2
+        ar_1, ar_2 = float(ar_1), float(ar_2)
         return ar_1 / ar_2
-    except:
+    except ValueError:
+        return 'Операнды не числа. Введите числа.'
+    except ZeroDivisionError:
         return print('Ошибка деления на ноль! Укажите другой делитель.')
+
 print(div_2(a_1, a_2))
